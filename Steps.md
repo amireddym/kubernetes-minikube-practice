@@ -28,3 +28,30 @@ kubectl delete deployment nginx-server
 kubectl get replicaset
 kubectl get pod
 
+kubectl apply -f <filepath>
+kubectl delete -f <filepath>
+
+Kubernetes config file Structure
+1. Metadata
+2. Specification
+3. Status --- generated automatically by kubernetes
+
+Labels and Selectors
+Metadata --- labels
+Spec --- Selectors
+
+kubectl describe service nginx-service
+kubectl get pod -o wide
+kubectl get deployment nginx-server -o yaml
+
+kubectl get all
+
+echo -n 'plainText' | base64
+
+kubectl get secret
+minikube service mongo-express-service --url
+
+kubectl get namespaces
+kubectl cluster-info
+
+kubectl create namespace my-namespace
