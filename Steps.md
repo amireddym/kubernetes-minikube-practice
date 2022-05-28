@@ -66,4 +66,6 @@ brew install kubectx
 kubens
 kubens my-namespace
 
-minikube addons enable ingress
+minikube addons enable ingress   --- might not work
+
+minikube dashboard --url
