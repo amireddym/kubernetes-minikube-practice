@@ -55,3 +55,15 @@ kubectl get namespaces
 kubectl cluster-info
 
 kubectl create namespace my-namespace
+
+kubectl api-resources --namespaced=false
+kubectl api-resources --namespaced=true
+
+kubectl get configmap -n default
+kubectl apply -f filePath --namespace=my-namespace
+
+brew install kubectx
+kubens
+kubens my-namespace
+
+minikube addons enable ingress
