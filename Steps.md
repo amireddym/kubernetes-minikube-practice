@@ -69,3 +69,38 @@ kubens my-namespace
 minikube addons enable ingress   --- might not work
 
 minikube dashboard --url
+
+#HELM CHART
+
+its a directory structure for yaml files
+my-chart/ 
+    Chart.yaml  -- metadata
+    values.yaml  -- template data values which are default can be override
+    charts/   -- dependent charts
+    templates/  -- template files location
+
+helm install --values=new-values.yaml <chartName>
+.Values object is created by merging values.yaml and new-values.yaml to create that object to use in Template files
+
+helm install --set version=2.0.0   -- setting from cli the values to override default ones
+helm upgrade <chartName>   to update the charts on cluster
+helm rollback <chartName>
+
+client  -> server (Tiller) -> k8 cluster
+
+Volumes in kubernetes
+Persistent Volumes  --- not namespaced, Accessible for whole cluster
+Persistent Volume Claim  --- pods access storage by claiming the volume. volume claim then finds the appropriate one from the persistent volumes. Claims should be in the same namespace as the pods using them.
+Storage Class
+
+kubectl get endpoints
+Headless Services --- cluserIP to None
+
+helm repo add bitnami <repoUrl>
+helm install my-release bitnami/wordpress
+helm search hub wordpress
+helm search hub wordpress
+
+helm list
+helm uninstall my-release
+helm repo update
