@@ -104,3 +104,29 @@ helm search hub wordpress
 helm list
 helm uninstall my-release
 helm repo update
+
+creating a demo helm chart
+helm create demochart
+helm template demochart
+helm lint demochart
+helm install demochartRelease --debug --dry-run demochart
+helm install demochartRelease demochart
+helm list -a
+helm upgrade demochartRelease demochart
+helm rollback demochartRelease 1
+helm delete demochartRelease
+
+helm repo list  --- upstream repos
+helm repo add <Repo-Name> <Repo-Url>
+helm repo search <Repo-Name>
+helm repo update
+helm repo index demochart
+helm repo remove <Repo-Name>
+helm diff revision demochart 1 2
+
+helm plugin install <url>
+helm plugin list
+helm show readme bitnami/wordpress --version 10.0.3
+helm show values bitnami/wordpress --version 10.0.3
+ 
+watch -x <command>
